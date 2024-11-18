@@ -62,7 +62,7 @@ The result of the search is written to a file in the `output` folder.
 * `-n n_var` : number of variables in the system.
 * `-search_method` : the chosen search algorithm. Options are `-es` for an exhaustive search, `-gs` for a greedy search and `-dc` for the divide and conquer approach. Multiple options are possible.
 * `-gt` : (Optional) Indicates if a transformation to the best basis should be done before one of the search algorithms. Without this option, the program finds the best partition using the original $n$ variables
-* `-l` : (Optional) Indicates if the intermediate steps of the search algorithm should be written to a separate file in the `output` folder. Only int the case of the greedy search and divide and conquer method.
+* `-l` : (Optional) Indicates if the intermediate steps of the search algorithm should be written to a separate file in the `output` folder. Only in the case of the greedy search and divide and conquer method.
 
 
 ## Example
