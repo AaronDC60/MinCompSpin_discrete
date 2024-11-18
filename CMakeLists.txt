@@ -16,14 +16,14 @@ if(BUILD_TESTS)
     add_subdirectory(tests)
 endif()
 
-add_subdirectory(src/Model)
-add_subdirectory(src/Search_Algorithms)
+add_subdirectory(src/model)
+add_subdirectory(src/search_algorithms)
 
 add_executable(${PROJECT_NAME} src/main.cpp)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC Model Search_Algorithms)
 target_include_directories(${PROJECT_NAME} PUBLIC
                           "${PROJECT_BINARY_DIR}"
-                          "${PROJECT_SOURCE_DIR}/src/Model"
-                          "${PROJECT_SOURCE_DIR}/src/Search_Algorithms"
+                          "${PROJECT_SOURCE_DIR}/src/model"
+                          "${PROJECT_SOURCE_DIR}/src/search_algorithms"
                           )
