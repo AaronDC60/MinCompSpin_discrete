@@ -9,6 +9,7 @@
 #include <float.h>
 #include <bitset>
 #include <cmath>
+#include <algorithm>
 
 /**
  * Representation of the characteristics of a Minimally Complex Model
