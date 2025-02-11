@@ -4,7 +4,6 @@
 #include <fstream>
 #include <stdio.h>
 #include <vector>
-#include <unordered_map>
 #include <map>
 #include <float.h>
 #include <bitset>
@@ -83,7 +82,7 @@ struct mcm {
     std::vector<double> evidence_storage_es;
 
     // Store in map otherwise because not every ICC will occur (better memory efficiency)
-    std::unordered_map<__uint128_t, double> evidence_storage;
+    std::map<__uint128_t, double> evidence_storage;
 
     std::vector<std::vector<__uint128_t>> best_basis;
     // Store the best partition in a vector in case there are multiple partitions with the same log evidence

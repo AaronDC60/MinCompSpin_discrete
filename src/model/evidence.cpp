@@ -37,7 +37,7 @@ double get_evidence_icc(__uint128_t component, mcm& model){
     // Check if it evidence for this component is already calculated
     if (!model.exhaustive){
         // Greedy search or divide and conquer -> Search in the storage, which is a map
-        std::unordered_map<__uint128_t, double>::iterator result = model.evidence_storage.find(component);
+        std::map<__uint128_t, double>::iterator result = model.evidence_storage.find(component);
         if (result == model.evidence_storage.end()){
             // Not found -> needs to be calculated
             int r = component_size(component);
