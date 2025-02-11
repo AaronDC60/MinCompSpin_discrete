@@ -9,10 +9,7 @@
  * 
  * @return void                 Nothing is returned by this function.
  */
-void greedy_search(mcm& model){
-    // Reset best mcm in case another search has been ran previously
-    model.best_mcm.clear();
-    
+void greedy_search(mcm& model){    
     // Indicate that this is not an exhaustive search
     // Necessary because different data structure is used to store the evidence of ICCs
     model.exhaustive = false;

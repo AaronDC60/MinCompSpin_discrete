@@ -10,8 +10,7 @@
  * @return void                 Nothing is returned by this function.
  */
 void divide_and_conquer(mcm&model){
-    // Reset best mcm adn storage in case another search has been ran previously
-    model.best_mcm.clear();
+    // Reset storage in case another search has been ran previously
     model.evidence_storage.clear();
 
     // Indicate that this is not an exhaustive search
@@ -71,7 +70,7 @@ int division(int move_from, int move_to, mcm& model){
     __uint128_t component_2;
 
     // Variable to indicate which member is moving
-    int member;
+    __uint128_t member;
 
     // Calculate the evidence of the component before splitting (reference point for the difference in evidence)
     double evidence_unsplit_component = get_evidence_icc(partition[move_from], model);
@@ -159,11 +158,11 @@ int division(int move_from, int move_to, mcm& model){
  * 
  * @return Integer representation of the bitstring with only a 1 in the position of the ith bit set to 1 in component.
  */
-int find_member_i(__uint128_t component, int i){
+__uint128_t find_member_i(__uint128_t component, int i){
     // Counter to keep track of the number of bits set to 1
     int counter = 0;
     // Starting value: integer representation of the bitstring with only the least significant bit set to 1
-    int position = 1;
+    __uint128_t position = 1;
     // Continue as long as 'component' has bits set to 1
     while(component){
         // Check if the least significant bit is '1'
@@ -190,7 +189,7 @@ int find_member_i(__uint128_t component, int i){
  * 
  * @return Index of the least significant bit set to 1.
  */
-int index_of_member(int member){
+int index_of_member(__uint128_t member){
     // Starting index
     int i=0;
     // Continue as long as the least significant bit is not a 1
