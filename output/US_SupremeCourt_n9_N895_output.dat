@@ -1,4 +1,8 @@
-Search: 0s 
+############################# 
+# Search for the best basis # 
+############################# 
+ 
+Duration: 0s 
 
 Best basis:
 
@@ -12,30 +16,47 @@ Best basis:
 001000001
 000000100
 
-Exhaustive search: 0s 
+##################### 
+# Exhaustive search # 
+##################### 
 
-Number of best MCMs found : 1
+Duration: 0s 
+
+Number of equivalent best MCMs found : 1
 
 Best MCM(s): 
+
 Component 0 : 100000000
 Component 1 : 011000100
 Component 2 : 000111011
 
 Best log-evidence: -3154.42
 
-Greedy search: 0s 
+################# 
+# Greedy search # 
+################# 
+
+Duration: 0s 
 
 Best MCM: 
+
 Component 0 : 100111000
 Component 1 : 011000111
+
 Best log-evidence: -3163.25
 
-Divide and conquer: 0s 
+###################### 
+# Divide and conquer # 
+###################### 
+
+Duration: 0s 
 
 Best MCM: 
+
 Component 0 : 011000100
 Component 1 : 000111011
 Component 2 : 100000000
+
 Best log-evidence: -3154.42
 
 Search done

@@ -94,7 +94,11 @@ int main(int argc, char* argv[]){
         std::vector<int> state(n);
 
         // Write the best basis to the output file
-        outputFile << "Search: " << duration.count() / 1000 << "s \n" << '\n';
+        outputFile << "############################# \n";
+        outputFile << "# Search for the best basis # " << '\n';
+        outputFile << "############################# \n \n";
+
+        outputFile << "Duration: " << duration.count() / 1000 << "s \n" << '\n';
         outputFile << "Best basis:" << "\n\n";
         // Iterate over all n operators
         for (int i = 0; i < n; ++i){
@@ -126,9 +130,14 @@ int main(int argc, char* argv[]){
         auto stop = std::chrono::high_resolution_clock::now();
         auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
 
-        outputFile << "Exhaustive search: " << duration.count() / 1000 << "s \n" << '\n';
-        outputFile << "Number of best MCMs found : " << model.best_mcm.size() << "\n\n";
+        outputFile << "##################### \n";
+        outputFile << "# Exhaustive search # " << '\n';
+        outputFile << "##################### \n\n";
+
+        outputFile << "Duration: " << duration.count() / 1000 << "s \n" << '\n';
+        outputFile << "Number of equivalent best MCMs found : " << model.best_mcm.size() << "\n\n";
         outputFile << "Best MCM(s): " << std::endl;
+        outputFile << "\n";
         for (int i = 0; i < model.best_mcm.size(); ++i){
             print_partition_to_file(outputFile, model.best_mcm[i]);
             outputFile << "\n";
@@ -151,10 +160,16 @@ int main(int argc, char* argv[]){
         if(log_file){
             model.greedy_file->close();
         }
-        outputFile << "Greedy search: " << duration.count() / 1000 << "s \n" << std::endl;    
+        outputFile << "################# \n";
+        outputFile << "# Greedy search # \n";
+        outputFile << "################# \n\n";
+
+        outputFile << "Duration: " << duration.count() / 1000 << "s \n" << '\n';    
 
         outputFile << "Best MCM: " << std::endl;
+        outputFile << "\n";
         print_partition_to_file(outputFile, model.best_mcm[0]);
+        outputFile << "\n";
         outputFile << "Best log-evidence: " << model.best_evidence << "\n" <<std::endl;
     }
 
@@ -173,10 +188,16 @@ int main(int argc, char* argv[]){
         if(log_file){
             model.divide_and_conquer_file->close();
         }
-        outputFile << "Divide and conquer: " << duration.count() / 1000 << "s \n" << std::endl;    
+        outputFile << "###################### \n";
+        outputFile << "# Divide and conquer # \n";
+        outputFile << "###################### \n\n";
+
+        outputFile << "Duration: " << duration.count() / 1000 << "s \n" << '\n'; 
 
         outputFile << "Best MCM: " << std::endl;
+        outputFile << "\n";
         print_partition_to_file(outputFile, model.best_mcm[0]);
+        outputFile << "\n";
         outputFile << "Best log-evidence: " << model.best_evidence << "\n" << std::endl;
     }
 
