@@ -36,13 +36,29 @@ Note that if the starting component has more than two variables, we can stop whe
 After this division process, we backtrack to the partition that had the largest log evidence. If this is the starting partition, the algorithm stops.
 However, if there was a split that increased the log evidence, we repeat the division process on both components separately.
 
+## Prerequisites
+
+* The code uses C++ 11.
+* CMake v3.26.4+ (Optional)
+
 ## Installation
+
+### With CMake
 
 Run the script `build_and_test.sh` to compile the program and execute some [tests](https://github.com/AaronDC60/MinCompSpin_discrete/tree/main/tests) to ensure that the code works correctly:
 
 ```
 sh build_and_test.sh
 ````
+
+### Without CMake
+
+```
+mkdir build
+cd build
+g++ -std=c++11 -O3 ../src/main.cpp ../src/model/*.cpp ../src/search_algorithms/*.cpp -o ./mcm_discrete.exe
+```
+
 
 ## Usage
 
@@ -67,7 +83,7 @@ The result of the search is written to a file in the `output` folder.
 
 ## Example
 
-The [input](https://github.com/AaronDC60/MinCompSpin_discrete/tree/main/input) folder contains the US Supreme Court voting dataset.
+The [input](https://github.com/AaronDC60/MinCompSpin_discrete/tree/main/input) folder contains the US Supreme Court voting dataset [1].
 Running the program for this dataset using a basis transformation and all three search algorithms:
 
 ```
@@ -98,21 +114,24 @@ The spin operators are ordered from low to high entropy.
 The second part of the output file is the result of every search algorithm:
 
 ```
-Exhaustive search: 0s 
+##################### 
+# Exhaustive search # 
+##################### 
 
-Number of best MCMs found : 1
+Number of equivalent best MCMs found : 1
 
 Best MCM(s): 
+
 Component 0 : 100000000
 Component 1 : 011000100
 Component 2 : 000111011
-
-Best log-evidence: -3154.42
 ```
 
 For the exhaustive search, the best MCM has three components. The first component contains only the first variable.
 Variables 2,3 and 7 form the second component and the third component consists of variables 4,5,6,8 and 9.
 In the rare case that multiple MCMs have the same lowest log evidence, all of them will be found (only for the exhaustive search).
+
+[1] H.J. Spaeth, L. Epstein, T.W. Ruger, K. Whittington, J.A. Segal, A.D. Martin:SupremeCourtdatabase. Version 2011 Release 3 (2011). http://scdb.wustl.edu/index.php.
 
 
 
